@@ -24,73 +24,58 @@ package com.eldermoraes.item01staticfactorymethods;
  */
 public class Naming {
 
-    private final String s1;
-    private final String s2;
-    private final String s3;
-    private final String s4;
-    private final Integer i1;
-    private final Integer i2;
+    private final String firstname;
+    private final String lastname;
+    private final String email;
+    private final Integer age;
 
     private Naming() {
-        this.s1 = null;
-        this.s2 = null;
-        this.s3 = null;
-        this.s4 = null;
-        this.i1 = null;
-        this.i2 = null;
+        this.firstname = null;
+        this.lastname = null;
+        this.email = null;
+        this.age = null;
     }
 
-    private Naming(String s1, String s2, Integer i1) {
-        this.s1 = s1;
-        this.s2 = s2;
-        this.s3 = null;
-        this.s4 = null;
-        this.i1 = i1;
-        this.i2 = null;
+    private Naming(String firstname, String lastname, Integer age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = null;
+        this.age = age;
     }
 
-    private Naming(String s3, Integer i2, String s4) {
-        this.s1 = null;
-        this.s2 = null;
-        this.s3 = s3;
-        this.i1 = null;
-        this.s4 = s4;
-        this.i2 = i2;
+    private Naming(String firstname, Integer age, String email) {
+        this.firstname = firstname;
+        this.lastname = null;
+        this.email = email;
+        this.age = age;
     }
 
     public static Naming noParam() {
         return new Naming();
     }
 
-    public static Naming sOneStwoIone(String s1, String s2, Integer i1) {
-        return new Naming(s1, s2, i1);
+    public static Naming firstnameAndLastname(String firstname, String lastname, Integer age) {
+        return new Naming(firstname, lastname, age);
     }
 
-    public static Naming sThreeItwoSfour(String s3, Integer i2, String s4) {
-        return new Naming(s3, i2, s4);
+    public static Naming firstnameAndEmail(String firstname, String email, Integer age) {
+        return new Naming(firstname, age, email);
     }
 
-    public String getS1() {
-        return s1;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public String getS2() {
-        return s2;
+    public String getLastname() {
+        return lastname;
     }
 
-    public String getS3() {
-        return s3;
+    public String getEmail() {
+        return email;
     }
 
-    public String getS4() {
-        return s4;
+    public Integer getAge() {
+        return age;
     }
 
-    public Integer getI1() {
-        return i1;
-    }
-
-    public Integer getI2() {
-        return i2;
-    }
 }

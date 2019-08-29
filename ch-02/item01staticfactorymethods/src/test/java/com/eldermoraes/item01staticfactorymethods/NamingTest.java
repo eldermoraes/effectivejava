@@ -31,24 +31,21 @@ public class NamingTest {
     public void checkNoParam() {
         Naming n1 = Naming.noParam();
 
-        assertTrue(n1.getI1() ==null && n1.getI2() == null &&
-           n1.getS1() == null && n1.getS2() == null && 
-           n1.getS3() == null && n1.getS4() == null );
+        assertTrue(n1.getAge() ==null && n1.getFirstname() == null &&
+                n1.getLastname() == null && n1.getEmail() == null);
     }
     
     @Test
-    public void sOneStwoIone() {
-        Naming n1 = Naming.sOneStwoIone("", "", 1);
+    public void firstnameAndLastname() {
+        Naming n1 = Naming.firstnameAndLastname("", "", 1);
 
-        assertTrue(n1.getI2() == null &&
-           n1.getS3() == null && n1.getS4() == null );
+        assertTrue(n1.getEmail() == null);
     }
     
     @Test
-    public void sThreeItwoSfour() {
-        Naming n1 = Naming.sThreeItwoSfour("", 1, "");
+    public void firstnameAndEmail() {
+        Naming n1 = Naming.firstnameAndEmail("", "", 1);
 
-        assertTrue(n1.getI1() ==null &&
-           n1.getS1() == null && n1.getS2() == null);
+        assertTrue(n1.getLastname() == null);
     }    
 }
