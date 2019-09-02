@@ -18,19 +18,26 @@
  */
 package com.eldermoraes.item01staticfactorymethods;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
 /**
  *
- * @author eldmorae
+ * @author eldermoraes
  */
-public class DontAlwaysCreateANewObjectTest {
+public class ReturnSubtype {
     
-    @Test
-    public void isEquals() {
-        DontAlwaysCreateANewObject d1 = DontAlwaysCreateANewObject.getInstance();
-        DontAlwaysCreateANewObject d2 = DontAlwaysCreateANewObject.getInstance();
+    public static ReturnSubtype getInstanceOfSubtype1(){
+        return new Subtype1();
+    }
+    
+    public static ReturnSubtype getInstanceOfSubtype2(){
+        return new Subtype2();
+    }    
+
+    private static class Subtype1 extends ReturnSubtype{
+                
+    }
+    
+    private static class Subtype2 extends ReturnSubtype{
         
-        assertEquals(d1, d2);
     }
 }
+

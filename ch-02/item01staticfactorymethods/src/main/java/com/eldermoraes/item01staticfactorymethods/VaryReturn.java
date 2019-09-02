@@ -18,19 +18,33 @@
  */
 package com.eldermoraes.item01staticfactorymethods;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
 /**
  *
- * @author eldmorae
+ * @author eldermoraes
  */
-public class DontAlwaysCreateANewObjectTest {
+public abstract class VaryReturn {
     
-    @Test
-    public void isEquals() {
-        DontAlwaysCreateANewObject d1 = DontAlwaysCreateANewObject.getInstance();
-        DontAlwaysCreateANewObject d2 = DontAlwaysCreateANewObject.getInstance();
+    
+    public static VaryReturn getInstance(int passengersCount){
+        if (passengersCount < 5)
+            return new SmallCar();
+        else if (passengersCount < 8)
+            return new MiniVan();
+        else
+            return new Bus();
         
-        assertEquals(d1, d2);
+    }
+    
+    
+    private static class SmallCar extends VaryReturn{
+        
+    }
+    
+    private static class MiniVan extends VaryReturn{
+        
+    }
+    
+    private static class Bus extends VaryReturn{
+        
     }
 }

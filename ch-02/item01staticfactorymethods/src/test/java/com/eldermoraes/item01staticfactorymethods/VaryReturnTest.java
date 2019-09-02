@@ -18,19 +18,33 @@
  */
 package com.eldermoraes.item01staticfactorymethods;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
+
 /**
  *
- * @author eldmorae
+ * @author eldermoraes
  */
-public class DontAlwaysCreateANewObjectTest {
+public class VaryReturnTest {
     
     @Test
-    public void isEquals() {
-        DontAlwaysCreateANewObject d1 = DontAlwaysCreateANewObject.getInstance();
-        DontAlwaysCreateANewObject d2 = DontAlwaysCreateANewObject.getInstance();
+    public void isSmallCar(){
+        VaryReturn v1 = VaryReturn.getInstance(4);
         
-        assertEquals(d1, d2);
+        assertTrue(VaryReturn.class.isAssignableFrom(v1.getClass()));
     }
+    
+    @Test
+    public void isMiniVan(){
+        VaryReturn v1 = VaryReturn.getInstance(7);
+        
+        assertTrue(VaryReturn.class.isAssignableFrom(v1.getClass()));
+    }
+    
+    @Test
+    public void isBus(){
+        VaryReturn v1 = VaryReturn.getInstance(8);
+        
+        assertTrue(VaryReturn.class.isAssignableFrom(v1.getClass()));
+    }    
 }
